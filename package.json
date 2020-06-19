@@ -18,7 +18,8 @@
     "build:es:css": "postcss src/*.css --output es/index.css --config postcss.config.js",
     "build:lib:css": "postcss src/*.css --output lib/index.css --config postcss.config.js",
     "demo": "webpack --config ./webpack.config.js --mode=production",
-    "clearall": "rimraf dist styles lib es demo"
+    "clearall": "rimraf dist styles lib es demo",
+    "precommit": "build"
   },
   "files": [
     "es",
