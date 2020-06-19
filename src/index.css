@@ -26,29 +26,20 @@
   font-size: 16px;
   border-radius: 50%;
   background-color: white;
+}
 
-  & > img {
-    padding: 3px;
-    height: 20px;
-    width: 20px;
-  }
+rcc-Arrow img {
+  padding: 3px;
+  height: 20px;
+  width: 20px;
+}
 
-  &--prev {
-    left: 0;
+rcc-Arrow--prev {
+  left: 0;
+}
 
-    & > img {
-      margin: 0 1px 0 -1px;
-    }
-
-  }
-
-  &--next {
-    right: 0;
-
-    & > img {
-      margin: 0 -1px 0 1px;
-    }
-  }
+rcc-Arrow--prev img {
+  margin: 0 1px 0 -1px;
 }
 
 .rcc-Dot {

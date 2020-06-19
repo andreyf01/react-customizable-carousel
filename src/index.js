@@ -15,7 +15,7 @@ export class Carousel extends PureComponent {
   state = { currentIndex: 0, nextIndex: 0, dotsIndex: 0, translateX: 0, inTransition: false, scrollItems: 1 }
   handleNextClick = () => {
     const { currentIndex, inTransition, scrollItems } = this.state
-    const { children, infinite, transitionDuration, showItemsCount } = this.props
+    const { children, infinite, transitionDuration, showItemsCount, onChange } = this.props
     const childrenCount = Children.count(children)
     let nextIndex = currentIndex === childrenCount - 1 ? 0 : currentIndex + 1
 
@@ -30,10 +30,11 @@ export class Carousel extends PureComponent {
         transitionDuration: 0,
         inTransition: false
       })), transitionDuration * 1000)
+    onChange(nextIndex)
   }
   handlePrevClick = () => {
     const { currentIndex, inTransition, scrollItems } = this.state
-    const { infinite, children, transitionDuration, showItemsCount } = this.props
+    const { infinite, children, transitionDuration, showItemsCount, onChange } = this.props
     const childrenCount = Children.count(children)
     const nextIndex = currentIndex === 0 ? childrenCount - 1 : currentIndex - 1
 
@@ -48,6 +49,7 @@ export class Carousel extends PureComponent {
         transitionDuration: 0,
         inTransition: false
       })), transitionDuration * 1000)
+    onChange(nextIndex)
   }
   handleDotClick = (index) => {
     const { currentIndex, inTransition, scrollItems } = this.state
